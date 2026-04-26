@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+  backend:
+    image: backend
+    container_name: backend
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/logsmonitor
+    depends_on:
+      - mongo
+    ports:
+      - "4000:4000"
+    networks:
+      - app-network
+
+  frontend:
+    image: frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  mongo_data:
+
+networks:
+  app-network:
+    driver: bridge
