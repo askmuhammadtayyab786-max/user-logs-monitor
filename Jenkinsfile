@@ -5,7 +5,7 @@ pipeline {
         EC2_IP = "3.104.2.196"
         FRONTEND_IMAGE = "frontend"
         BACKEND_IMAGE = "backend"
-        COMPOSE_FILE = "docker-compose.yml"
+        COMPOSE_FILE = "docker-compose.yaml"
         GIT_REPO = "https://github.com/askmuhammadtayyab786-max/user-logs-monitor.git"
     }
 
