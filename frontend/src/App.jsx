@@ -74,7 +74,7 @@ export default function App() {
       if (socketRef.current) socketRef.current.disconnect();
       return;
     }
-    const socket = io("http://localhost:4000");
+    const socket = io("http://3.104.2.196:4000");
     socketRef.current = socket;
     socket.on("new-log", (log) => {
       setLogs((prev) => [log, ...prev].slice(0, 50));
