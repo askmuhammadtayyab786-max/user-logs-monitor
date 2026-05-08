@@ -6,7 +6,7 @@ import Filters from "./components/Filters";
 import LogForm from "./components/LogForm";
 import "./App.css";
 
-const API = "http://52.62.170.133:4000/api";
+const API = "http://3.104.2.196:4000/api";
 
 export default function App() {
   const [logs, setLogs] = useState([]);
